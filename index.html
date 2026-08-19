@@ -3,25 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ヒナン・ウォーク・ボット</title>
-</head>
-<body>
-    <h1>避難訓練さんぽ・Bot</h1>
-    <p>LINEで散歩しながら避難訓練ができるサービスです。</p>
-
-    <h2>使い方</h2>
-    <ol>
-        <li>下のボタンからLINEで友だち追加</li>
-        <li>散歩を開始して避難訓練スタート！</li>
-    </ol>
-
-    <!-- ここにLINEの友だち追加URLやQRコードのリンクを貼る -->
-   <a href="https://qr-official.line.me/gs/M_700cubfk_BW.png?oat_content=qr" target="_blank" rel="noopener noreferrer">
-  LINEで友だち追加する
-　　</a>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>避難ウォークBot - 使い方</title>
     <style>
         * {
@@ -57,11 +38,39 @@
             font-size: 28px;
             margin-bottom: 10px;
         }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
         
         .content {
             padding: 30px;
             line-height: 1.8;
             color: #333;
+        }
+
+        .line-section {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .line-button {
+            display: inline-block;
+            background-color: #06C755;
+            color: white;
+            font-weight: bold;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .line-button:hover {
+            opacity: 0.8;
         }
         
         .intro-text {
@@ -138,7 +147,7 @@
         
         .copy-button {
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 10px;
             padding: 12px 30px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -167,10 +176,19 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>📖 避難ウォークBot の使い方</h1>
+            <h1>📖 避難ウォークBot</h1>
+            <p>LINEで散歩しながら避難訓練ができるサービスです。</p>
         </div>
         
         <div class="content">
+            <!-- LINE友だち追加エリア -->
+            <div class="line-section">
+                <p style="margin-bottom: 12px; font-weight: bold;">＼ はじめかた ／</p>
+                <a href="https://qr-official.line.me/gs/M_700cubfk_BW.png?oat_content=qr" target="_blank" rel="noopener noreferrer" class="line-button">
+                    💬 LINEで友だち追加する（QR表示）
+                </a>
+            </div>
+
             <div class="intro-text">
                 各コマンドを入力した際の動作説明です：
             </div>
@@ -248,7 +266,7 @@
     
     <script>
         function copyToClipboard() {
-            const htmlContent = document.documentElement.outerHTML;
+            const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
             navigator.clipboard.writeText(htmlContent).then(() => {
                 alert('HTMLコードをコピーしました！');
             }).catch(err => {
@@ -256,7 +274,5 @@
             });
         }
     </script>
-
-
 </body>
 </html>
