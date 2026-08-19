@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ヒナン・ウォーク・ボット</title>
+</head>
+<body>
+    <h1>ヒナン・ウォーク・ボット</h1>
+    <p>LINEで散歩しながら避難訓練ができるサービスです。</p>
+
+    <h2>使い方</h2>
+    <ol>
+        <li>下のボタンからLINEで友だち追加</li>
+        <li>散歩を開始して避難訓練スタート！</li>
+    </ol>
+
+    <!-- ここにLINEの友だち追加URLやQRコードのリンクを貼る -->
+    <a href="https://lin.ee/YOUR_LINE_ID">LINEで友だち追加する</a>
+</body>
+</html>
