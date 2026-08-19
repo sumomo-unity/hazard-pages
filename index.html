@@ -19,6 +19,243 @@
    <a href="https://qr-official.line.me/gs/M_700cubfk_BW.png?oat_content=qr" target="_blank" rel="noopener noreferrer">
   LINEで友だち追加する
 　　</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>避難ウォークBot - 使い方</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .content {
+            padding: 30px;
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        .intro-text {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .command-section {
+            margin-bottom: 25px;
+            padding: 18px;
+            background: #f9f9f9;
+            border-left: 4px solid #667eea;
+            border-radius: 6px;
+        }
+        
+        .command-title {
+            font-weight: bold;
+            font-size: 16px;
+            color: #667eea;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .command-description {
+            color: #555;
+            font-size: 14px;
+            margin-left: 0;
+            line-height: 1.6;
+        }
+        
+        .command-description ul {
+            list-style: none;
+            padding-left: 10px;
+            margin-top: 8px;
+        }
+        
+        .command-description li {
+            margin-bottom: 6px;
+            font-size: 13px;
+        }
+        
+        .divider {
+            border-top: 2px dashed #ddd;
+            margin: 25px 0;
+        }
+        
+        .notes {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 13px;
+            line-height: 1.7;
+            color: #333;
+        }
+        
+        .notes strong {
+            color: #d39e00;
+        }
+        
+        .footer {
+            background: #f0f0f0;
+            padding: 15px 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+        
+        .copy-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .copy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .copy-button:active {
+            transform: translateY(0);
+        }
+        
+        .emoji {
+            margin-right: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📖 避難ウォークBot の使い方</h1>
+        </div>
+        
+        <div class="content">
+            <div class="intro-text">
+                各コマンドを入力した際の動作説明です：
+            </div>
+            
+            <div class="command-section">
+                <div class="command-title">
+                    <span class="emoji">🔹</span>「スタート」
+                </div>
+                <div class="command-description">
+                    避難所一覧（地図リンク付き）が表示されます。目標避難所を選択後、LINEの「＋」メニューから【位置情報】を送信すると計測が開始します。
+                </div>
+            </div>
+            
+            <div class="command-section">
+                <div class="command-title">
+                    <span class="emoji">🔹</span>「スタート」（訓練中に送信）
+                </div>
+                <div class="command-description">
+                    ※訓練中に送信すると、いつでも最初からやり直せます。
+                </div>
+            </div>
+            
+            <div class="command-section">
+                <div class="command-title">
+                    <span class="emoji">🔹</span>「ゴール」
+                </div>
+                <div class="command-description">
+                    避難所到着時（または途中で終了したい時）に入力します。入力後に現在地の【位置情報】を送信すると、避難時間・移動距離・目標到着判定などが表示されます。
+                </div>
+            </div>
+            
+            <div class="command-section">
+                <div class="command-title">
+                    <span class="emoji">🔹</span>「リセット」
+                </div>
+                <div class="command-description">
+                    訓練を途中で中止し、記録を初期化します（訓練中のみ有効）。
+                </div>
+            </div>
+            
+            <div class="command-section">
+                <div class="command-title">
+                    <span class="emoji">🔹</span>「履歴」
+                </div>
+                <div class="command-description">
+                    過去の避難訓練の記録一覧（直近5件）を表示します。
+                </div>
+            </div>
+            
+            <div class="command-section">
+                <div class="command-title">
+                    <span class="emoji">🔹</span>「使い方」
+                </div>
+                <div class="command-description">
+                    この説明テキストを表示します。
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="notes">
+                <strong>📝 注意事項：</strong>
+                <ul>
+                    <li>訓練中は「スタート」「リセット」「ゴール」「使い方」のみ受け付けます。</li>
+                    <li>終了後は「スタート」「使い方」「履歴」を入力できます。</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <button class="copy-button" onclick="copyToClipboard()">📋 HTMLコードをコピー</button>
+            <p style="margin-top: 10px; font-size: 11px;">クリックするとこのHTMLコードをコピーできます</p>
+        </div>
+    </div>
+    
+    <script>
+        function copyToClipboard() {
+            const htmlContent = document.documentElement.outerHTML;
+            navigator.clipboard.writeText(htmlContent).then(() => {
+                alert('HTMLコードをコピーしました！');
+            }).catch(err => {
+                console.error('コピーに失敗しました:', err);
+            });
+        }
+    </script>
 
 
 </body>
