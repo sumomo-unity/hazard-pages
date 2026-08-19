@@ -136,38 +136,6 @@
             color: #d39e00;
         }
         
-        .footer {
-            background: #f0f0f0;
-            padding: 15px 30px;
-            text-align: center;
-            font-size: 12px;
-            color: #666;
-            border-top: 1px solid #ddd;
-        }
-        
-        .copy-button {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 12px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        
-        .copy-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-        
-        .copy-button:active {
-            transform: translateY(0);
-        }
-        
         .emoji {
             margin-right: 6px;
         }
@@ -257,22 +225,6 @@
                 </ul>
             </div>
         </div>
-        
-        <div class="footer">
-            <button class="copy-button" onclick="copyToClipboard()">📋 HTMLコードをコピー</button>
-            <p style="margin-top: 10px; font-size: 11px;">クリックするとこのHTMLコードをコピーできます</p>
-        </div>
     </div>
-    
-    <script>
-        function copyToClipboard() {
-            const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
-            navigator.clipboard.writeText(htmlContent).then(() => {
-                alert('HTMLコードをコピーしました！');
-            }).catch(err => {
-                console.error('コピーに失敗しました:', err);
-            });
-        }
-    </script>
 </body>
 </html>
