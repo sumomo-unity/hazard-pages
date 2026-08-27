@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -140,6 +139,29 @@
         .emoji {
             margin-right: 6px;
         }
+
+        /* QRコード画像用スタイル */
+        .hazard-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .hazard-item {
+            text-align: center;
+        }
+
+        .hazard-item img {
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .hazard-item p {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #666;
+        }
     </style>
 </head>
 <body>
@@ -167,7 +189,7 @@
                     <span class="emoji">🔹</span>「スタート」
                 </div>
                 <div class="command-description">
-                    避難所一覧（地図リンク付き）が表示されます。目標避難所を選択後、LINEの「＋」メニューから【位置情報】を送信すると計測が開始します。
+                    避難所一覧（地図リンク付き）が表示されます。目標避難所を選択後、LINEの「＋」メニューから【位置情報】を送信すると計測が[...]
                 </div>
             </div>
             
@@ -185,7 +207,7 @@
                     <span class="emoji">🔹</span>「ゴール」
                 </div>
                 <div class="command-description">
-                    避難所到着時（または途中で終了したい時）に入力します。入力後に現在地の【位置情報】を送信すると、避難時間・移動距離・目標到着判定などが表示されます。
+                    避難所到着時（または途中で終了したい時）に入力します。入力後に現在地の【位置情報】を送信すると、避難時間・移動距離・[...]
                 </div>
             </div>
             
@@ -217,62 +239,61 @@
             </div>
             
             <div class="divider"></div>
-                      <!-- ▼▼▼ 危険箇所QRセクション（ここから） ▼▼▼ -->
-<div class="line-section" style="margin-top: 30px;">
-    <p style="margin-bottom: 12px; font-weight: bold;">＼ 危険箇所QR ／</p>
+            <!-- ▼▼▼ 危険箇所QRセクション（ここから） ▼▼▼ -->
+            <div class="line-section" style="margin-top: 30px;">
+                <p style="margin-bottom: 12px; font-weight: bold;">＼ 危険箇所QR ／</p>
 
-    <!-- 冠水危険 -->
-    <a href="https://dorirusanpo-817693054453.asia-northeast1.run.app/hazard?id=hazard_flood_01"
-       target="_blank" rel="noopener noreferrer" class="line-button" style="margin-bottom: 10px; display: block;">
-        ⚠️ 冠水危険ポイント（hazard_flood_01）
-    </a>
+                <!-- 冠水危険 -->
+                <a href="https://dorirusanpo-817693054453.asia-northeast1.run.app/hazard?id=hazard_flood_01"
+                   target="_blank" rel="noopener noreferrer" class="line-button" style="margin-bottom: 10px; display: block;">
+                    ⚠️ 冠水危険ポイント（hazard_flood_01）
+                </a>
 
-    <!-- 段差危険 -->
-    <a href="https://dorirusanpo-817693054453.asia-northeast1.run.app/hazard?id=hazard_step_01"
-       target="_blank" rel="noopener noreferrer" class="line-button" style="margin-bottom: 10px; display: block;">
-        ⚠️ 段差危険ポイント（hazard_step_01）
-    </a>
+                <!-- 段差危険 -->
+                <a href="https://dorirusanpo-817693054453.asia-northeast1.run.app/hazard?id=hazard_step_01"
+                   target="_blank" rel="noopener noreferrer" class="line-button" style="margin-bottom: 10px; display: block;">
+                    ⚠️ 段差危険ポイント（hazard_step_01）
+                </a>
 
-    <!-- 傾斜危険 -->
-    <a href="https://dorirusanpo-817693054453.asia-northeast1.run.app/hazard?id=hazard_slope_01"
-       target="_blank" rel="noopener noreferrer" class="line-button" style="margin-bottom: 10px; display: block;">
-        ⚠️ 傾斜危険ポイント（hazard_slope_01）
-    </a>
+                <!-- 傾斜危険 -->
+                <a href="https://dorirusanpo-817693054453.asia-northeast1.run.app/hazard?id=hazard_slope_01"
+                   target="_blank" rel="noopener noreferrer" class="line-button" style="margin-bottom: 10px; display: block;">
+                    ⚠️ 傾斜危険ポイント（hazard_slope_01）
+                </a>
 
-    <!-- 暗がり危険 -->
-    <a href="https://dorirusanpo-817693054453.asia-northeast1.run.app/hazard?id=hazard_dark_01"
-       target="_blank" rel="noopener noreferrer" class="line-button" style="margin-bottom: 10px; display: block;">
-        ⚠️ 暗がり危険ポイント（hazard_dark_01）
-    </a>
+                <!-- 暗がり危険 -->
+                <a href="https://dorirusanpo-817693054453.asia-northeast1.run.app/hazard?id=hazard_dark_01"
+                   target="_blank" rel="noopener noreferrer" class="line-button" style="margin-bottom: 10px; display: block;">
+                    ⚠️ 暗がり危険ポイント（hazard_dark_01）
+                </a>
 
-    <!-- QR画像一覧（フォルダなし版） -->
-    <div class="hazard-container" style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+                <!-- QR画像一覧（横に4つ並ぶ） -->
+                <div class="hazard-container">
 
-        <div class="hazard-item" style="text-align: center;">
-            <img src="hazard_flood_01.png" alt="冠水危険QR" width="200">
-            <p>冠水危険（hazard_flood_01）</p>
-        </div>
+                    <div class="hazard-item">
+                        <img src="hazard_flood_01.png" alt="冠水危険QR">
+                        <p>冠水危険（hazard_flood_01）</p>
+                    </div>
 
-        <div class="hazard-item" style="text-align: center;">
-            <img src="hazard_step_01.png" alt="段差危険QR" width="200">
-            <p>段差危険（hazard_step_01）</p>
-        </div>
+                    <div class="hazard-item">
+                        <img src="hazard_step_01.png" alt="段差危険QR">
+                        <p>段差危険（hazard_step_01）</p>
+                    </div>
 
-        <div class="hazard-item" style="text-align: center;">
-            <img src="hazard_slope_01.png" alt="傾斜危険QR" width="200">
-            <p>傾斜危険（hazard_slope_01）</p>
-        </div>
+                    <div class="hazard-item">
+                        <img src="hazard_slope_01.png" alt="傾斜危険QR">
+                        <p>傾斜危険（hazard_slope_01）</p>
+                    </div>
 
-        <div class="hazard-item" style="text-align: center;">
-            <img src="hazard_dark_01.png" alt="暗がり危険QR" width="200">
-            <p>暗がり危険（hazard_dark_01）</p>
-        </div>
+                    <div class="hazard-item">
+                        <img src="hazard_dark_01.png" alt="暗がり危険QR">
+                        <p>暗がり危険（hazard_dark_01）</p>
+                    </div>
 
-    </div>
-</div>
-
-
-<!-- ▲▲▲ 危険箇所QRセクション（ここまで） ▲▲▲ -->
+                </div>
+            </div>
+            <!-- ▲▲▲ 危険箇所QRセクション（ここまで） ▲▲▲ -->
+            
             <div class="notes">
                 <strong>📝 注意事項：</strong>
                 <ul>
